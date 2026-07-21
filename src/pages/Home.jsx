@@ -45,20 +45,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
-      <section className="intro-grid">
-        <p className="eyebrow">OUR APPROACH</p>
-        <h2>
-          Thoughtful homes,
-          <br />
-          made personal.
-        </h2>
-        <p>
-          From first sketch to final styling, every detail is considered through
-          the lens of your routines, memories and aspirations.
-        </p>
-      </section>
-
       <section className="projects-home">
         <div className="section-head">
           <div>

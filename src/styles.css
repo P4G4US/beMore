@@ -98,7 +98,8 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   padding: 5vw 0 3vw;
 }
 .eyebrow {
@@ -116,7 +117,8 @@ main {
 }
 .hero h1 em,
 .page-hero h1 em {
-  font-weight: 00;
+  font-style: normal;
+  font-weight: 400;
 }
 .hero-text {
   max-width: 420px;
