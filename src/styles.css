@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Italiana&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
 :root {
   --ink: #20201d;
   --paper: #f2efe7;
@@ -94,6 +95,7 @@ main {
   position: relative;
   padding: 3.2vw;
 }
+
 .hero-copy {
   display: flex;
   flex-direction: column;
@@ -134,6 +136,8 @@ main {
   overflow: hidden;
   background: var(--sand);
 }
+
+/* hero logo removed */
 .hero-slide {
   position: absolute;
   inset: 0;
@@ -341,6 +345,10 @@ main {
 .founder strong {
   display: block;
   margin-top: 38px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: clamp(18px, 1.8vw, 28px);
+  letter-spacing: 0;
 }
 .founder-portraits {
   grid-column: 1/-1;
@@ -436,29 +444,7 @@ main {
   height: 75vh;
   margin: 0 10vw 10vw;
 }
-.media-list {
-  padding: 0 3.2vw 10vw;
-}
-.media-card {
-  display: grid;
-  grid-template-columns: 70px 1fr 40px;
-  padding: 36px 0;
-  border-top: 1px solid var(--line);
-  align-items: start;
-  transition: 0.3s;
-}
-.media-card:hover {
-  padding-left: 18px;
-}
-.media-card p {
-  font-size: 11px;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-.media-card h2 {
-  font: clamp(30px, 4vw, 64px)/1.05 "Italiana";
-  margin: 10px 0;
-}
+/* Media section removed */
 .contact-section {
   padding: 0 8vw 7vw;
 }

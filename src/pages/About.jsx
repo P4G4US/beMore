@@ -67,7 +67,7 @@ export default function About() {
             Our role is to listen closely, edit carefully and create rooms that
             feel grounded, expressive and unmistakably yours.
           </p>
-          <strong>Vinithra · Founder</strong>
+          <strong>Founders : Suraj Diwate, Kavya Sreenivas</strong>
         </div>
         <div className="founder-portraits">
           <div

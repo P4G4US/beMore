@@ -35,9 +35,9 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow">INTERIOR DESIGN STUDIO · BENGALURU</p>
           <h1>
-            Spaces that feel
+            Crafting timeless spaces with
             <br />
-            <em>like you.</em>
+            <em>intentional design.</em>
           </h1>
           <p className="hero-text">
             We create soulful interiors shaped by how people live, gather, pause
@@ -51,7 +51,7 @@ export default function Home() {
             <p className="eyebrow">SELECTED WORK</p>
             <h2>Our Projects</h2>
           </div>
-          <Link to="/projects">See all ↗</Link>
+          <Link to="/projects">See all</Link>
         </div>
 
         <div className="project-grid">
@@ -63,8 +63,7 @@ export default function Home() {
 
       <section className="quote-band">
         <p>
-          “A home should not perform for the world. It should hold space for the
-          people within it.”
+          “Design that grows with you.”
         </p>
       </section>
     </>
