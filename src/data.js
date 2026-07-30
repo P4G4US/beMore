@@ -60,16 +60,3 @@ export const projects = [
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85",
   },
 ];
-
-export const mediaItems = [
-  ["Architectural Digest", "AD100 2024: The Debuts", "July 2024"],
-  ["Elle Decor", "A bit of London, a whole lot of Bengaluru", "February 2025"],
-  ["Architectural Digest", "A one-way ticket to Tulum", "September 2023"],
-  [
-    "Condé Nast Traveller",
-    "A former science museum becomes a holiday home",
-    "October 2023",
-  ],
-  ["Elle Decor", "Home is where the workspace is", "May 2024"],
-  ["GoodHomes", "A tropical haven in North Bengaluru", "November 2022"],
-];

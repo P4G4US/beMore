@@ -4,7 +4,7 @@ A responsive React/Vite interior-design portfolio inspired by the editorial stru
 
 ## Included
 
-- Home, About, Projects, Project Detail, Media and Contact pages
+- Home, About, Projects, Project Detail and Contact pages
 - Responsive desktop/mobile navigation
 - Editorial typography and asymmetrical project grids
 - Reusable React components and project data

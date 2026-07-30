@@ -59,7 +59,7 @@ export default function Home() {
             <p className="eyebrow">SELECTED WORK</p>
             <h2>Our Projects</h2>
           </div>
-          <Link to="/projects">See all ↗</Link>
+          <Link to="/projects">See all </Link>
         </div>
 
         <div className="project-grid">

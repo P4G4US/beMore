@@ -436,29 +436,6 @@ main {
   height: 75vh;
   margin: 0 10vw 10vw;
 }
-.media-list {
-  padding: 0 3.2vw 10vw;
-}
-.media-card {
-  display: grid;
-  grid-template-columns: 70px 1fr 40px;
-  padding: 36px 0;
-  border-top: 1px solid var(--line);
-  align-items: start;
-  transition: 0.3s;
-}
-.media-card:hover {
-  padding-left: 18px;
-}
-.media-card p {
-  font-size: 11px;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-.media-card h2 {
-  font: clamp(30px, 4vw, 64px)/1.05 "Italiana";
-  margin: 10px 0;
-}
 .contact-section {
   padding: 0 8vw 7vw;
 }
@@ -671,12 +648,6 @@ main {
   .detail-image.inset {
     margin: 0 5vw 20vw;
     height: 60vh;
-  }
-  .media-list {
-    padding: 0 5vw 20vw;
-  }
-  .media-card {
-    grid-template-columns: 40px 1fr 20px;
   }
   .contact-section {
     padding: 0 5vw 14vw;
