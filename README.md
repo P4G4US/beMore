@@ -1,4 +1,4 @@
-# beMore — clean-room recreation
+# Studio Spaces — clean-room recreation
 
 A responsive React/Vite interior-design portfolio inspired by the editorial structure and visual rhythm of wee-spaces.com. This package does **not** contain that website's proprietary source code, logo, text, photography, or backend.
 

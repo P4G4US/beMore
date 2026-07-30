@@ -1,4 +1,9 @@
+import { useState } from "react";
+import surajImage from "../../asset/suraj.png";
+
 export default function About() {
+  const [activeTab, setActiveTab] = useState("address");
+
   const ethos = [
     [
       "01",
@@ -67,16 +72,14 @@ export default function About() {
             Our role is to listen closely, edit carefully and create rooms that
             feel grounded, expressive and unmistakably yours.
           </p>
-          <strong>Founders : Suraj Diwate, Kavya Sreenivas</strong>
+          
         </div>
         <div className="founder-portraits">
-          <div
+          <img
+            src={surajImage}
+            alt="Founder Suraj"
             className="founder-portrait"
-            role="img"
-            aria-label="Placeholder for the first founder portrait"
-          >
-            <span>Founder portrait 01 · 1080 × 1400</span>
-          </div>
+          />
           <div
             className="founder-portrait"
             role="img"
@@ -109,6 +112,51 @@ export default function About() {
         <div>
           <strong>60+</strong>
           <p>Happy clients</p>
+        </div>
+      </section>
+      <section className="address-section">
+        <div className="address-header">
+          <p className="eyebrow">GET IN TOUCH</p>
+          <h2>Visit Us</h2>
+        </div>
+        <div className="address-container">
+          <div className="address-tabs">
+            <button
+              className={`address-tab ${activeTab === "address" ? "active" : ""}`}
+              onClick={() => setActiveTab("address")}
+            >
+              Address
+            </button>
+          </div>
+          {activeTab === "address" && (
+            <div className="address-content">
+              <div className="address-info">
+                <h3>beMore Design Studio</h3>
+                <p>Bengaluru, India</p>
+                <p>
+                  <strong>Email:</strong> bemorearchitects@gmail.com
+                </p>
+                <p>
+                  <strong>Phone:</strong> +91 96634 24256, +91 99454 76358
+
+
+                </p>
+              </div>
+              <div className="address-map">
+                <iframe
+                  width="100%"
+                  height="400"
+                  frameBorder="0"
+                  style={{ border: 0 }}
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.87954387819!2d77.61245!3d12.9167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17e0e0e0e0e1%3A0x0!2sbeMore%20Design%20Studio!5e0!3m2!1sen!2sin!4v1722333600000"
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="beMore Design Studio Location"
+                ></iframe>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </>

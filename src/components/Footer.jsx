@@ -15,7 +15,7 @@ export default function Footer() {
         </Link>
       </div>
       <div className="footer-bottom">
-        <span>© 2026 beMore</span>
+        <span>© 2026 beMore Design Studio</span>
         <div>
           <a
             className="social-icon"

@@ -2,8 +2,16 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ProjectCard from "../components/ProjectCard";
 import { projects } from "../data";
+import logoImage from "../../asset/finallogo.png";
+import heroImage1 from "../../asset/starting block/bemore-08.jpg";
+import heroImage2 from "../../asset/starting block/bemore-16.jpg";
+import heroImage3 from "../../asset/starting block/bemore-42.jpg";
 
-const heroImages = projects.slice(0, 5);
+const heroImages = [
+  { image: heroImage1, title: "Interior Design" },
+  { image: heroImage2, title: "Interior Design" },
+  { image: heroImage3, title: "Interior Design" },
+];
 
 export default function Home() {
   const [activeImage, setActiveImage] = useState(0);
@@ -20,12 +28,12 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="hero-image" aria-label="Featured interior projects">
-          {heroImages.map((project, index) => (
+          {heroImages.map((item, index) => (
             <img
               className={`hero-slide${index === activeImage ? " active" : ""}`}
-              src={project.image}
-              alt={`${project.title} interior`}
-              key={project.slug}
+              src={item.image}
+              alt={`${item.title} interior`}
+              key={index}
               fetchPriority={index === 0 ? "high" : "auto"}
             />
           ))}
@@ -51,7 +59,7 @@ export default function Home() {
             <p className="eyebrow">SELECTED WORK</p>
             <h2>Our Projects</h2>
           </div>
-          <Link to="/projects">See all</Link>
+          <Link to="/projects">See all ↗</Link>
         </div>
 
         <div className="project-grid">
