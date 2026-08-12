@@ -571,8 +571,13 @@ main {
     font-size: 18vw;
   }
   .hero-image {
-    height: calc(100svh - 76px - 48px);
+    height: auto;
+    aspect-ratio: 4 / 5;
+    max-height: calc(100svh - 76px - 48px);
     min-height: 0;
+  }
+  .hero-slide {
+    object-position: center center;
   }
   .vertical-note {
     display: none;
@@ -674,6 +679,16 @@ main {
   .footer-bottom div {
     margin-top: 18px;
     flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 16px;
+  }
+  .hero-image {
+    aspect-ratio: 3 / 4;
+    max-height: calc(100svh - 76px - 32px);
   }
 }
 
