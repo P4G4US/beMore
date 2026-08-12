@@ -111,7 +111,7 @@ main {
 .hero h1,
 .page-hero h1,
 .project-detail-head h1 {
-  font: clamp(64px, 8.5vw, 150px)/0.99 "Italiana";
+  font: clamp(30px, 8.5vw, 114px)/0.99 "Italiana";
   letter-spacing: -0.045em;
   margin: 0;
 }

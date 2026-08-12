@@ -18,7 +18,7 @@ export default function Contact() {
             will get back to you.
           </p>
           <p>
-            <strong>General:</strong> hello@studio-spaces.com
+            <strong>General:</strong> bemorearchitects@gmail.com
           </p>
         </div>
       </section>

@@ -41,7 +41,7 @@ export default function Home() {
         </div>
 
         <div className="hero-copy">
-          <p className="eyebrow">INTERIOR DESIGN STUDIO · BENGALURU</p>
+          <p className="eyebrow">ARCHITECTURE AND INTERIOR DESIGN STUDIO · BENGALURU</p>
           <h1>
             Crafting timeless spaces with
             <br />
