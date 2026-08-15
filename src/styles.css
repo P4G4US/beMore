@@ -387,21 +387,81 @@ main {
   line-height: 1.7;
   margin: 0;
 }
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 8vw 3.2vw;
+.reviews-section {
+  padding: 10vw 3.2vw 8vw;
   background: var(--sand);
 }
-.stats div {
-  text-align: center;
+.reviews-heading {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 10vw;
+  align-items: end;
+  margin-bottom: 7vw;
+}
+.reviews-heading h2 {
+  font: clamp(50px, 6.4vw, 104px)/0.98 "Italiana";
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+.reviews-heading h2 em {
+  font-style: italic;
+  font-weight: 400;
+}
+.reviews-heading > p {
+  max-width: 500px;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.75;
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.review-card {
+  min-height: 480px;
+  padding: clamp(28px, 3vw, 52px);
   border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
 }
-.stats div:last-child {
-  border: 0;
+.review-card:last-child {
+  border-right: 0;
 }
-.stats strong {
-  font: clamp(70px, 8vw, 130px) "Italiana";
+.review-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.review-number {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+}
+.review-mark {
+  height: 70px;
+  font: 94px/0.75 "Italiana";
+  color: var(--accent);
+}
+.review-card blockquote {
+  margin: 4vw 0 5vw;
+  font: clamp(25px, 2.1vw, 36px)/1.32 "Italiana";
+}
+.review-card footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.review-card footer strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+.review-card footer span {
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  line-height: 1.5;
+  text-transform: uppercase;
 }
 .projects-page {
   padding: 0 3.2vw 12vw;
@@ -629,14 +689,32 @@ main {
     grid-column: 2;
     margin-top: 14px;
   }
-  .stats {
-    grid-template-columns: 1fr;
-    padding: 12vw 6vw;
+  .reviews-section {
+    padding: 20vw 6vw 16vw;
   }
-  .stats div {
+  .reviews-heading {
+    grid-template-columns: 1fr;
+    gap: 8vw;
+    margin-bottom: 14vw;
+  }
+  .reviews-heading h2 {
+    font-size: 14vw;
+  }
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+  .review-card {
+    min-height: 0;
+    padding: 10vw 0;
     border-right: 0;
     border-bottom: 1px solid var(--line);
-    padding: 30px;
+  }
+  .review-card:last-child {
+    border-bottom: 0;
+  }
+  .review-card blockquote {
+    margin: 10vw 0 12vw;
+    font-size: 30px;
   }
   .project-detail-head {
     padding: 20vw 5vw 8vw;
@@ -740,7 +818,7 @@ main {
 }
 
 .address-tab::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -1.5vw;
   left: 0;

@@ -31,6 +31,27 @@ export default function About() {
       "Every contributor brings a distinct point of view, making the work richer and more human.",
     ],
   ];
+
+  const reviews = [
+    {
+      quote:
+        "beMore understood how we wanted our home to feel, even before we had the words for it. Every room is thoughtful, warm and completely ours.",
+      name: "Ananya & Rohan",
+      project: "Residential Project · Bengaluru",
+    },
+    {
+      quote:
+        "The team brought clarity to every decision and made the entire process feel considered. The result is elegant, effortless and beautifully detailed.",
+      name: "Meera S.",
+      project: "Apartment Interior · Bengaluru",
+    },
+    {
+      quote:
+        "They balanced function and character perfectly. We now have a space that works for everyday life and still feels genuinely special.",
+      name: "Karthik & Nisha",
+      project: "Family Home · Mysuru",
+    },
+  ];
   return (
     <>
       <section className="page-hero split">
@@ -72,7 +93,6 @@ export default function About() {
             Our role is to listen closely, edit carefully and create rooms that
             feel grounded, expressive and unmistakably yours.
           </p>
-          
         </div>
         <div className="founder-portraits">
           <img
@@ -100,18 +120,41 @@ export default function About() {
           </div>
         ))}
       </section>
-      <section className="stats">
-        <div>
-          <strong>70+</strong>
-          <p>Projects delivered</p>
+      <section className="reviews-section" aria-labelledby="reviews-title">
+        <div className="reviews-heading">
+          <div>
+            <p className="eyebrow">KIND WORDS</p>
+            <h2 id="reviews-title">
+              What our clients
+              <br />
+              <em>say about us.</em>
+            </h2>
+          </div>
+          <p>
+            Spaces become meaningful through the people who live in them. Here
+            are a few notes from clients we have had the pleasure of designing
+            for.
+          </p>
         </div>
-        <div>
-          <strong>8+</strong>
-          <p>Years of expertise</p>
-        </div>
-        <div>
-          <strong>60+</strong>
-          <p>Happy clients</p>
+
+        <div className="reviews-grid">
+          {reviews.map((review, index) => (
+            <article className="review-card" key={review.name}>
+              <div className="review-card-top">
+                <span className="review-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="review-mark" aria-hidden="true">
+                  “
+                </span>
+              </div>
+              <blockquote>{review.quote}</blockquote>
+              <footer>
+                <strong>{review.name}</strong>
+                <span>{review.project}</span>
+              </footer>
+            </article>
+          ))}
         </div>
       </section>
       <section className="address-section">
@@ -138,8 +181,6 @@ export default function About() {
                 </p>
                 <p>
                   <strong>Phone:</strong> +91 96634 24256, +91 99454 76358
-
-
                 </p>
               </div>
               <div className="address-map">
