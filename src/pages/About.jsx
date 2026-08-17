@@ -1,8 +1,28 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import surajImage from "../../asset/suraj.png";
 
 export default function About() {
   const [activeTab, setActiveTab] = useState("address");
+  const [showReviewsBack, setShowReviewsBack] = useState(false);
+  const reviewsGridRef = useRef(null);
+
+  const scrollReviews = () => {
+    const grid = reviewsGridRef.current;
+
+    if (grid) {
+      grid.scrollBy({ left: grid.clientWidth * 0.8, behavior: "smooth" });
+      setShowReviewsBack(true);
+    }
+  };
+
+  const scrollReviewsToStart = () => {
+    const grid = reviewsGridRef.current;
+
+    if (grid) {
+      grid.scrollTo({ left: 0, behavior: "smooth" });
+      setShowReviewsBack(false);
+    }
+  };
 
   const ethos = [
     [
@@ -35,21 +55,33 @@ export default function About() {
   const reviews = [
     {
       quote:
-        "beMore understood how we wanted our home to feel, even before we had the words for it. Every room is thoughtful, warm and completely ours.",
-      name: "Ananya & Rohan",
-      project: "Residential Project · Bengaluru",
+        'Exceptional Interior Execution And designs for Our Dream Home! 🌟\n\nThe most critical part of the journey was the execution, and the team at Bemore design earned my absolute trust.\n\nComing in with past experiences from colleagues with other interior firms, I was prepared for delays in the carpentry work. Instead, Suraj and Kavya demonstrated flawless professionalism, performing "magic" to conclude the entire execution phase on time and with uncompromising quality. They made the impossible happen.\n\nKavya, deserves high praise for his meticulous supervision of both the creative design and the production process.\n\nI was especially impressed by the final Quality Control prior to handover. Suraj provided comments on usability and ergonomics that were insightful and are actively enhancing our living experience now.\n\nHowever, the brilliant finish delivered by the team Kavya and Suraj.',
+      name: "Vijaykumar ",
+      project: "7 months ago",
     },
     {
       quote:
-        "The team brought clarity to every decision and made the entire process feel considered. The result is elegant, effortless and beautifully detailed.",
-      name: "Meera S.",
-      project: "Apartment Interior · Bengaluru",
+        "Outstanding Work by beMore Design Studio – Highly Recommended!\n\nWe hired beMore Design Studio for our 3BHK apartment interior project, and they delivered an exceptional home transformation over three months.\n\nThe quality of work was truly outstanding – every element was executed with precision using premium materials and impeccable finishing touches.\n\nSpecial mention to Suraj and Kavya, who are incredibly talented and dedicated; their creativity, passion, and meticulous attention to detail made the entire process seamless and truly inspiring.\n\nTheir team of carpenters was wonderful – highly skilled, professional, and meticulous in every aspect of the craftsmanship.\n\nThe selection of designs was fantastic – modern, elegant, and perfectly customized to match our vision and lifestyle.\n\nWe are absolutely thrilled with the stunning results and would wholeheartedly recommend beMore Design Studio to anyone looking for top-notch interior design!\n\n5 stars – thank you for an amazing job!\n\n-Narayan",
+      name: "Narayan Vaster",
+      project: "7 months ago",
     },
     {
       quote:
-        "They balanced function and character perfectly. We now have a space that works for everyday life and still feels genuinely special.",
-      name: "Karthik & Nisha",
-      project: "Family Home · Mysuru",
+        "Amazing work! Professional team, great communication, and stunning designs. They understood our vision and delivered on time. Highly recommended for quality interiors. 😊 ...",
+      name: "Rahul Naidu",
+      project: "6 months ago",
+    },
+    {
+      quote:
+        "Walking into my cousin’s home in Anandnagar, Rajananda, designed by BeMore Interiors by Kavya, feels like stepping into a living piece of art. The house is a seamless blend of stone textures and modern elegance, where tradition meets contemporary design in the most graceful way.\n\nThe triplex layout is breathtaking, with each level flowing naturally into the next, creating both intimacy and openness. What truly sets this home apart are the water bodies open to the sky, designed to welcome rainwater and weave nature into everyday living. It’s not just architecture—it’s poetry in stone, light, and water.\n\nEvery corner reflects Kavya’s thoughtful vision: spaces that are functional yet soulful, luxurious yet rooted in simplicity. The interiors don’t just impress; they invite you to feel, to pause, and to belong.\n\nBeMore has proven that great design is not about excess, but about harmony. Kavya’s work here is a testament to how interiors can elevate life itself.",
+      name: "Sandeep Srinivas",
+      project: "7 months ago",
+    },
+    {
+      quote:
+        "We had our 3BHK handed over by Suraj and the team at beMore Design Studio, and we couldn't be happier with the results! From the very beginning, Suraj was incredibly professional, attentive, and receptive to our ideas.\n\nThe scope of work was extensive, but the team executed everything flawlessly:\n\nCarpentry & Woodwork: The quality of the carpentry is exceptional. The modular kitchen, wardrobes, and custom storage units are not only beautiful but also highly functional with flawless finishes.\n\nBathroom Fittings & Plumbing: The bathroom transformations were smooth and hassle-free. All the fittings were installed precisely, ensuring both aesthetic appeal and great functionality.\n\nAttention to Detail: What impressed us most was Suraj's eye for detail and commitment to delivering quality work without cutting corners.\n\nPrice assessment\nReasonable price\n\nServices\nSite master planning, 3D architectural renderings",
+      name: "Prashanth Ba",
+      project: "a month ago",
     },
   ];
   return (
@@ -137,7 +169,18 @@ export default function About() {
           </p>
         </div>
 
-        <div className="reviews-grid">
+        <div className="reviews-carousel">
+          <button
+            type="button"
+            className={`reviews-back${showReviewsBack ? " is-visible" : ""}`}
+            onClick={scrollReviewsToStart}
+            aria-label="Return to the first client review"
+            aria-hidden={!showReviewsBack}
+            tabIndex={showReviewsBack ? 0 : -1}
+          >
+            <span aria-hidden="true">←</span>
+          </button>
+          <div className="reviews-grid" ref={reviewsGridRef}>
           {reviews.map((review, index) => (
             <article className="review-card" key={review.name}>
               <div className="review-card-top">
@@ -155,6 +198,15 @@ export default function About() {
               </footer>
             </article>
           ))}
+          </div>
+          <button
+            type="button"
+            className="reviews-more"
+            onClick={scrollReviews}
+            aria-label="Scroll to more client reviews"
+          >
+            <span aria-hidden="true">→</span>
+          </button>
         </div>
       </section>
       <section className="address-section">
@@ -177,11 +229,30 @@ export default function About() {
                 <h3>beMore Design Studio</h3>
                 <p>Bengaluru, India</p>
                 <p>
-                  <strong>Email:</strong> bemorearchitects@gmail.com
+                  <strong>Email:</strong> info@bemorestudio.com
                 </p>
                 <p>
                   <strong>Phone:</strong> +91 96634 24256, +91 99454 76358
                 </p>
+                <a
+                  className="address-instagram"
+                  href="https://www.instagram.com/bemoredesignstudio/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Visit beMore Design Studio on Instagram"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle
+                      className="instagram-dot"
+                      cx="17.5"
+                      cy="6.5"
+                      r="1"
+                    />
+                  </svg>
+                  <span>@bemoredesignstudio</span>
+                </a>
               </div>
               <div className="address-map">
                 <iframe

@@ -220,7 +220,7 @@ main {
   max-width: 380px;
 }
 .projects-home {
-  padding: 10vw 3.2vw;
+  padding: 0 3.2vw 10vw;
 }
 .section-head {
   display: flex;
@@ -388,18 +388,19 @@ main {
   margin: 0;
 }
 .reviews-section {
-  padding: 10vw 3.2vw 8vw;
-  background: var(--sand);
+  padding: clamp(56px, 5vw, 80px) 3.2vw clamp(48px, 4.5vw, 72px);
+  background: #20201d;
+  color: #f2efe7;
 }
 .reviews-heading {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 10vw;
   align-items: end;
-  margin-bottom: 7vw;
+  margin-bottom: clamp(36px, 3.5vw, 56px);
 }
 .reviews-heading h2 {
-  font: clamp(50px, 6.4vw, 104px)/0.98 "Italiana";
+  font: clamp(46px, 5vw, 76px)/0.98 "Italiana";
   letter-spacing: -0.035em;
   margin: 0;
 }
@@ -413,18 +414,79 @@ main {
   font-size: 17px;
   line-height: 1.75;
 }
-.reviews-grid {
+.reviews-carousel {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  grid-template-columns: 76px minmax(0, 1fr) 76px;
+  border-top: 1px solid rgba(242, 239, 231, 0.3);
+  border-bottom: 1px solid rgba(242, 239, 231, 0.3);
+  overflow: hidden;
+}
+.reviews-grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.reviews-grid::-webkit-scrollbar {
+  display: none;
+}
+.reviews-more,
+.reviews-back {
+  z-index: 2;
+  width: 52px;
+  height: 52px;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  place-items: center;
+  border: 1px solid #f2efe7;
+  border-radius: 50%;
+  background: #20201d;
+  color: #f2efe7;
+  cursor: pointer;
+  transform: none;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+.reviews-back {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease,
+    opacity 180ms ease, visibility 180ms ease;
+}
+.reviews-back.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.reviews-more span,
+.reviews-back span {
+  font-size: 25px;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+.reviews-more:hover,
+.reviews-more:focus-visible,
+.reviews-back:hover,
+.reviews-back:focus-visible {
+  background: #f2efe7;
+  color: #20201d;
+  transform: translateX(4px);
+}
+.reviews-back:hover,
+.reviews-back:focus-visible {
+  transform: translateX(-4px);
 }
 .review-card {
-  min-height: 480px;
-  padding: clamp(28px, 3vw, 52px);
-  border-right: 1px solid var(--line);
+  flex: 0 0 40%;
+  height: 400px;
+  min-height: 400px;
+  padding: clamp(24px, 2.2vw, 36px);
+  border-right: 1px solid rgba(242, 239, 231, 0.3);
   display: flex;
   flex-direction: column;
+  scroll-snap-align: start;
 }
 .review-card:last-child {
   border-right: 0;
@@ -439,13 +501,19 @@ main {
   letter-spacing: 0.16em;
 }
 .review-mark {
-  height: 70px;
-  font: 94px/0.75 "Italiana";
+  height: 46px;
+  font: 68px/0.7 "Italiana";
   color: var(--accent);
 }
 .review-card blockquote {
-  margin: 4vw 0 5vw;
-  font: clamp(25px, 2.1vw, 36px)/1.32 "Italiana";
+  flex: 1;
+  min-height: 0;
+  margin: clamp(28px, 2.5vw, 40px) 0 clamp(26px, 2.2vw, 36px);
+  font: clamp(22px, 1.75vw, 29px)/1.3 "Italiana";
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  white-space: pre-line;
 }
 .review-card footer {
   margin-top: auto;
@@ -652,7 +720,7 @@ main {
     padding: 20vw 7vw;
   }
   .projects-home {
-    padding: 20vw 5vw;
+    padding: 0 5vw 20vw;
   }
   .project-grid {
     grid-template-columns: 1fr;
@@ -690,22 +758,37 @@ main {
     margin-top: 14px;
   }
   .reviews-section {
-    padding: 20vw 6vw 16vw;
+    padding: 14vw 6vw 12vw;
   }
   .reviews-heading {
     grid-template-columns: 1fr;
-    gap: 8vw;
-    margin-bottom: 14vw;
+    gap: 5vw;
+    margin-bottom: 9vw;
   }
   .reviews-heading h2 {
-    font-size: 14vw;
+    font-size: 12vw;
   }
-  .reviews-grid {
-    grid-template-columns: 1fr;
+  .reviews-more,
+  .reviews-back {
+    width: 46px;
+    height: 46px;
+  }
+  .reviews-carousel {
+    grid-template-columns: 58px minmax(0, 1fr) 58px;
+  }
+  .reviews-more:hover,
+  .reviews-more:focus-visible {
+    transform: translateX(4px);
+  }
+  .reviews-back:hover,
+  .reviews-back:focus-visible {
+    transform: translateX(-4px);
   }
   .review-card {
-    min-height: 0;
-    padding: 10vw 0;
+    flex-basis: 88%;
+    height: 400px;
+    min-height: 400px;
+    padding: 7vw 0;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
@@ -713,8 +796,8 @@ main {
     border-bottom: 0;
   }
   .review-card blockquote {
-    margin: 10vw 0 12vw;
-    font-size: 30px;
+    margin: 6vw 0 7vw;
+    font-size: 26px;
   }
   .project-detail-head {
     padding: 20vw 5vw 8vw;
@@ -792,7 +875,8 @@ main {
 }
 
 .address-container {
-  max-width: 1200px;
+  width: 100%;
+  max-width: none;
 }
 
 .address-tabs {
@@ -854,6 +938,37 @@ main {
   margin: 0.8rem 0;
   font-size: 1rem;
   line-height: 1.6;
+}
+
+.address-instagram {
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 0.8rem;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  font-size: 1.15rem;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.address-instagram:hover,
+.address-instagram:focus-visible {
+  color: var(--accent);
+  border-bottom-color: currentColor;
+}
+
+.address-instagram svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.address-instagram .instagram-dot {
+  fill: currentColor;
+  stroke: none;
 }
 
 .address-map {
