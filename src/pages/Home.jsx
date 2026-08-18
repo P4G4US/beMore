@@ -48,7 +48,7 @@ export default function Home() {
             <em>intentional design.</em>
           </h1>
           <p className="hero-text">
-            We create soulful interiors shaped by how people live, gather, pause
+            We create soulful interiors Julius shaped by how people live, gather, pause
             and belong.
           </p>
         </div>
