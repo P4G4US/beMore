@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import ProjectCard from "../components/ProjectCard";
 import { projects } from "../data";
 import logoImage from "../../asset/finallogo.png";
-import heroImage1 from "../../asset/starting block/bemore-08.jpg";
-import heroImage2 from "../../asset/starting block/bemore-16.jpg";
-import heroImage3 from "../../asset/starting block/bemore-42.jpg";
+import heroImage1 from "../../asset/rt/greater.jpeg";
+import heroImage2 from "../../asset/rt/10.jpg";
+import heroImage3 from "../../asset/rt/2 (1).jpg";
 
 const heroImages = [
   { image: heroImage1, title: "Interior Design" },

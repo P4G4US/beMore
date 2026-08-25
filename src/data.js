@@ -1,13 +1,32 @@
+import rtImage1 from "../asset/rt/1.jpg";
+import rtImage2 from "../asset/rt/2 (1).jpg";
+import rtImage4 from "../asset/rt/4.jpg";
+import rtImage6 from "../asset/rt/6.jpg";
+import rtImage7 from "../asset/rt/7.jpg";
+import rtImage9 from "../asset/rt/9.jpg";
+import rtImage10 from "../asset/rt/10.jpg";
+import rtImage11 from "../asset/rt/11.jpg";
+import rtGreater from "../asset/rt/greater.jpeg";
+
 export const projects = [
   {
     slug: "maison-verde",
     title: "Maison Verde",
     location: "Bengaluru",
     category: "Residential",
-    image:
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1800&q=85",
-    image2:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=85",
+    image: rtImage1,
+    image2: rtImage2,
+    heroImage: rtGreater,
+    gallery: [
+      rtImage1,
+      rtImage2,
+      rtImage4,
+      rtImage6,
+      rtImage7,
+      rtImage9,
+      rtImage10,
+      rtImage11,
+    ],
   },
   {
     slug: "earthy-hacienda",
